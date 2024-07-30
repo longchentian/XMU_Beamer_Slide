@@ -1,0 +1,105 @@
+% This is file `beamerinnerthemeuniv.sty'.
+% Modify by Chentian Long.
+% Version: 2024/07/29 v1.3e (Original Version: 2024/04/16 v1.3c by Linrong Wu) .
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% 本文件为 UNIV_Beamer_Slide-demo 内部主题宏包文件.
+% !请勿轻易改动此文档中代码.
+%%%% ----------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{beamerinnerthemeuniv}[2024/05/18 v1.3e, UNIV Beamer Theme(Inner Theme)]
+%%%% ----------------------------------------------------------------
+
+
+\mode<presentation>
+
+
+% ----------------
+% Beamer Theme Title Page Layout
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.3c(2024/04/16).
+% ----------------
+% CMD:: \newdimen   - 创建长度寄存器.
+% CMD:: \newsavebox - 创建盒子.
+% ----------------
+% DIMEN:: title 框底部高度 - titlelow.
+\newdimen\beamer@univ@len@titlelow
+\beamer@univ@len@titlelow=0.4\paperheight
+% DIMEN:: title 框顶部高度 - titlehigh.
+\newdimen\beamer@univ@len@titlehigh
+\beamer@univ@len@titlehigh=0.65\paperheight
+% DIMEN:: title 框文字顶部高度 - titletexthigh.
+\newdimen\beamer@univ@len@titletexthigh
+\beamer@univ@len@titletexthigh=\dimexpr\beamer@univ@len@titlehigh-0.025\paperheight\relax
+% DIMEN:: author 框顶部高度 - authorhigh.
+\newdimen\beamer@univ@len@authorhigh
+\beamer@univ@len@authorhigh=0.475\paperheight
+% DIMEN:: author 框文字顶部高度 - authortexthigh.
+\newdimen\beamer@univ@len@authortexthigh
+\beamer@univ@len@authortexthigh=\dimexpr\beamer@univ@len@authorhigh-0.025\paperheight\relax
+% DIMEN:: author 框最小宽度 - authorwidthmin.
+\newdimen\beamer@univ@len@authorwidthmin
+\beamer@univ@len@authorwidthmin=0.75\paperwidth
+% DIMEN:: author 框顶部到 title 框底部距离 - titletoauthor.
+\newdimen\beamer@univ@len@titletoauthor
+\beamer@univ@len@titletoauthor=\dimexpr\beamer@univ@len@authorhigh-\beamer@univ@len@titlelow+0.2pt\relax
+% DIMEN:: author 框高度 - titletoauthor.
+\newdimen\beamer@univ@len@authorheight
+
+% 封面样式定义.
+\defbeamertemplate*{title page}{UNIV title page theme}{%  
+  \newsavebox{\beamer@univ@authorbox}
+  \sbox{\beamer@univ@authorbox}{\parbox{.72\paperwidth}{%
+    \setlength{\baselineskip}{10pt}%
+    {\usebeamerfont{author}\insertauthor\par}%
+    {\vskip6pt}%
+    {\usebeamerfont{institute}\insertinstitute}%
+  }}% savebox 存储
+  \settototalheight{\beamer@univ@len@authorheight}{\usebox{\beamer@univ@authorbox}}% 计算高度
+  \beamer@univ@len@authorheight=\dimexpr\beamer@univ@len@authorheight+0.036\paperwidth\relax% 补齐上下空白部分
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight]{}%
+    \begin{tikzpicture}[overlay, yshift=-13.3pt]%
+      \node[anchor=north west, inner sep=0pt, outer sep=0pt]%
+        at (16pt, \dimexpr\paperheight-14pt\relax) {\pgfuseimage{lg-name}};% 绘制 logo-name
+      \node[anchor=south east, inner sep=0pt, outer sep=0pt]%
+        at (\paperwidth, \beamer@univ@len@titlehigh) {\pgfuseimage{building}};% 绘制望江楼房
+      \fill[PrimaryC] (0, \beamer@univ@len@titlelow) rectangle (\paperwidth, \beamer@univ@len@titlehigh); % 绘制 title 框
+      \node[anchor=north west, inner sep=0pt, outer sep=0pt,%
+        text width=.9\paperwidth] at (16pt, \beamer@univ@len@titletexthigh) {%
+        {\usebeamerfont{title}\usebeamercolor[bg]{title}\inserttitle\par}%
+        {\vskip6pt}%
+        {\usebeamerfont{subtitle}\usebeamercolor[bg]{subtitle}\insertsubtitle\par}%
+      };% 绘制 title | subtitle 文字
+      \fill[PrimaryC!10!BackgroundC] (0, \beamer@univ@len@authorhigh)%
+        -- (\beamer@univ@len@authorwidthmin, \beamer@univ@len@authorhigh)%
+        -- ++ (0.5\beamer@univ@len@authorheight, -\beamer@univ@len@authorheight)%
+        -- (0, \dimexpr\beamer@univ@len@authorhigh-\beamer@univ@len@authorheight\relax)%
+        -- cycle;% 绘制 author 框
+      \fill[BackgroundC] (0, \beamer@univ@len@authorhigh)%
+        -- (\dimexpr\beamer@univ@len@authorwidthmin+1.56pt\relax, \beamer@univ@len@authorhigh)%
+        -- ++ (\dimexpr0.5\beamer@univ@len@titletoauthor\relax, -\beamer@univ@len@titletoauthor)%
+        -- ++ (-1.6pt, 0)%
+        -- ++ (-\dimexpr0.5\beamer@univ@len@titletoauthor-0.8pt\relax, \dimexpr\beamer@univ@len@titletoauthor-1.6pt\relax)%
+        -- (0, \dimexpr\beamer@univ@len@authorhigh-1.6pt\relax) -- cycle;% 绘制装饰线
+      \node[anchor=north west, inner sep=0pt, outer sep=0pt]%
+        at (16pt, \beamer@univ@len@authortexthigh) (AuthorText) {\usebox{\beamer@univ@authorbox}};% 绘制 author | institute 文字
+      \node[anchor=south west, inner sep=0pt, outer sep=0pt] at (16pt, 14pt) {\usebeamerfont{date}\insertdate};% 绘制 date 文字
+      \node[anchor=south east, inner sep=0pt, outer sep=0pt] at (\dimexpr\paperwidth-16pt\relax, 14pt) {\pgfuseimage{verify}};% 绘制 verify 校训
+      % \node[anchor=south west,draw] at (0, 0) {00};
+    \end{tikzpicture}%
+  \end{beamercolorbox}%
+}
+\setbeamertemplate{title page}[UNIV title page theme]
+% ----------------
+
+
+%%%% ----------------------------------------------------------------
+\endinput
+%%%% ----------------------------------------------------------------
+% End of file `beamerinnerthemeuniv.sty'.

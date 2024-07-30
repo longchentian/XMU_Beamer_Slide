@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[h]
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}minipage\PYG{n+nb}{\PYGZcb{}}[t]\PYG{n+nb}{\PYGZob{}}.4\PYG{k}{\PYGZbs{}columnwidth}\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}centering}
+		\PYG{k}{\PYGZbs{}includegraphics}\PYG{c}{\PYGZpc{}}
+		[width=\PYG{k}{\PYGZbs{}columnwidth}]\PYG{n+nb}{\PYGZob{}}stop\PYGZhy{}rd.pdf\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}掌门白天的暂停\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:ZhangmenBtdzt\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}minipage\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}quad}
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}minipage\PYG{n+nb}{\PYGZcb{}}[t]\PYG{n+nb}{\PYGZob{}}.4\PYG{k}{\PYGZbs{}columnwidth}\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}centering}
+		\PYG{k}{\PYGZbs{}includegraphics}\PYG{c}{\PYGZpc{}}
+		[width=\PYG{k}{\PYGZbs{}columnwidth}]\PYG{n+nb}{\PYGZob{}}stop\PYGZhy{}gn.pdf\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}掌门晚上的暂停\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:ZhangmenWsdzt\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}minipage\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

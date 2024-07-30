@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[h]
+	\PYG{k}{\PYGZbs{}centering}
+	\PYG{k}{\PYGZbs{}includegraphics}\PYG{c}{\PYGZpc{}}
+	[width=0.36\PYG{k}{\PYGZbs{}columnwidth}]\PYG{c}{\PYGZpc{}}
+	\PYG{n+nb}{\PYGZob{}}stop\PYGZhy{}bk.pdf\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}caption}\PYG{c}{\PYGZpc{}}
+	\PYG{n+nb}{\PYGZob{}}黑色的暂停\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:stopbk\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

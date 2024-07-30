@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}[\PYGZlt{}keys\PYGZgt{}]\PYG{n+nb}{\PYGZob{}}\PYGZlt{}title\PYGZgt{}\PYG{n+nb}{\PYGZcb{}}
+	\PYGZlt{}code\PYGZgt{}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+或
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}[\PYGZlt{}keys\PYGZgt{}]
+	\PYG{k}{\PYGZbs{}frametitle}\PYG{n+nb}{\PYGZob{}}\PYGZlt{}title\PYGZgt{}\PYG{n+nb}{\PYGZcb{}}
+	\PYGZlt{}code\PYGZgt{}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

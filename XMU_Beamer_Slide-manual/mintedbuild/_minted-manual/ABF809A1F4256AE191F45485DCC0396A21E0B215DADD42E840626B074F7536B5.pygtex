@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+模板依VIS手册定义了以下颜色:\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{k}{\PYGZbs{}textcolor}\PYG{n+nb}{\PYGZob{}}univred\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}锦绣红\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}textcolor}\PYG{n+nb}{\PYGZob{}}univgrey\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}优雅灰\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}textcolor}\PYG{n+nb}{\PYGZob{}}univblue\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}宝石蓝\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}textcolor}\PYG{n+nb}{\PYGZob{}}univgreen\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}荷叶绿\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}textcolor}\PYG{n+nb}{\PYGZob{}}univyellow\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}银杏黄\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+定义颜色请使用\PYG{k}{\PYGZbs{}verb}!\PYG{k}{\PYGZbs{}definecolor}!
+\end{Verbatim}

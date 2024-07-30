@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}\PYGZlt{}width\PYGZgt{}\PYG{n+nb}{\PYGZcb{}}
+	\PYGZlt{}code\PYGZgt{}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

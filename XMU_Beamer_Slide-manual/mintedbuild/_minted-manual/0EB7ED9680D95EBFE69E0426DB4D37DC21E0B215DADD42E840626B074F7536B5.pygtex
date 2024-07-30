@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+建议使用半角标点符号, 后键入一个空格. (尤其是英文书写!)\PYG{k}{\PYGZbs{}\PYGZbs{}}\PYG{n+na}{[1ex]}
+双引号由两对左单引号、右单引号构成: ``  \PYGZsq{}\PYGZsq{}. 左单引号在键盘上ESC键下方.\PYG{k}{\PYGZbs{}\PYGZbs{}}\PYG{n+na}{[1ex]}
+建议使用实心的句号, 只要书写的是自然科学类文章.
+\end{Verbatim}
