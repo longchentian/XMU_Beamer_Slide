@@ -1,0 +1,256 @@
+% This is file `beamercolorthemeuniv.sty'.
+% Modify by Chentian Long.
+% Version: 2024/07/29 v1.3e (Original Version: 2024/04/16 v1.3c by Linrong Wu) .
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% 本文件为 UNIV_Beamer_Slide-demo 颜色主题宏包文件.
+% !请勿轻易改动此文档中代码.
+%%%% ----------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{beamercolorthemeuniv}[2024/05/18 v1.3e, UNIV Beamer Theme(Color Theme)]
+%%%% ----------------------------------------------------------------
+
+
+% ----------------
+% Declare of Options
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.2a(2022/03/10).
+% Updated in v1.3a(2022/03/16), v1.3b(2022/04/13).
+% ----------------
+% CMD:: \DeclareOptionBeamer  - 声明参数.
+% CMD:: \ExecuteOptionsBeamer - 预执行参数.
+% CMD:: \ProcessOptionsBeamer - 处理参数.
+% ----------------
+% KEY:: ColorDisplay.
+% VALUE:: JXred | BSblue | Custom.
+\DeclareOptionBeamer{ColorDisplay}{\def\beamer@univ@ColorDisplay{#1}}
+
+\ExecuteOptionsBeamer{ColorDisplay=JXred}
+\ProcessOptionsBeamer
+% ----------------
+
+
+% ----------------
+% Declare of Packages
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.3b(2022/04/13).
+% ----------------
+% CMD:: \RequirePackage - 调用宏包.
+% ----------------
+\RequirePackage{xcolor}% xcolor: 设置颜色.
+% ----------------
+
+
+% ----------------
+% Declare of Colors
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.2a(2022/03/10).
+% Updated in v1.3a(2022/03/16).
+% ----------------
+% 原来作者依据四川大学VIS视觉识别系统(2014), 定义了主题色 univred, univgrey, 与辅助色 univblue, univgreen, univyellow.
+% 这里修改 定义了主题色 univred univblue 根据
+% 上述定义颜色均采用 CMYK 颜色模式.
+% 注: 常用的颜色模式有 RGB 与 CMYK, 对应 LaTeX 中 rgb(0-1小数制, x/255), RGB(原始数值), cmyk(0-1小数制, x/100).
+% ----------------
+% CMD:: \definecolor - 依据颜色代码定义新颜色.
+% CMD:: \colorlet    - 依据已有颜色延申新颜色.
+% ----------------
+% COLOR:: 锦绣红 - univred    - CMYK(12,92,95,20).
+% \definecolor{univred}   {cmyk}{0.12,0.92,0.95,0.20}
+% 修改成厦大百年校庆的视觉识别系统 红色
+\definecolor{univred}   {cmyk}{0,0.71,0.81,0.16}
+\colorlet{univred10}   {univred!10!white}
+\colorlet{univred20}   {univred!20!white}
+\colorlet{univred30}   {univred!30!white}
+\colorlet{univred40}   {univred!40!white}
+\colorlet{univred50}   {univred!50!white}
+\colorlet{univred60}   {univred!60!white}
+\colorlet{univred70}   {univred!70!white}
+\colorlet{univred80}   {univred!80!white}
+\colorlet{univred90}   {univred!90!white}
+
+% COLOR:: 优雅灰 - univgrey   - CMYK(47,37,37,20).
+\definecolor{univgrey}  {cmyk}{0.47,0.37,0.37,0.00}
+\colorlet{univgrey10}  {univgrey!10!white}
+\colorlet{univgrey20}  {univgrey!20!white}
+\colorlet{univgrey30}  {univgrey!30!white}
+\colorlet{univgrey40}  {univgrey!40!white}
+\colorlet{univgrey50}  {univgrey!50!white}
+\colorlet{univgrey60}  {univgrey!60!white}
+\colorlet{univgrey70}  {univgrey!70!white}
+\colorlet{univgrey80}  {univgrey!80!white}
+\colorlet{univgrey90}  {univgrey!90!white}
+
+% COLOR:: 宝石蓝 - univblue   - CMYK(100,60,0,15).
+% \definecolor{univblue}  {cmyk}{1.00,0.60,0.00,0.15}
+% 修改成厦大百年校庆的视觉识别系统 蓝色 RGB(0,66,140)
+\definecolor{univblue}  {cmyk}{1.00,0.53,0.00,0.45}
+\colorlet{univblue10}  {univblue!10!white}
+\colorlet{univblue20}  {univblue!20!white}
+\colorlet{univblue30}  {univblue!30!white}
+\colorlet{univblue40}  {univblue!40!white}
+\colorlet{univblue50}  {univblue!50!white}
+\colorlet{univblue60}  {univblue!60!white}
+\colorlet{univblue70}  {univblue!70!white}
+\colorlet{univblue80}  {univblue!80!white}
+\colorlet{univblue90}  {univblue!90!white}
+
+% COLOR:: 荷叶绿 - univgreen  - CMYK(100,0,90,15).
+\definecolor{univgreen} {cmyk}{1.00,0.00,0.90,0.15}
+\colorlet{univgreen10} {univgreen!10!white}
+\colorlet{univgreen20} {univgreen!20!white}
+\colorlet{univgreen30} {univgreen!30!white}
+\colorlet{univgreen40} {univgreen!40!white}
+\colorlet{univgreen50} {univgreen!50!white}
+\colorlet{univgreen60} {univgreen!60!white}
+\colorlet{univgreen70} {univgreen!70!white}
+\colorlet{univgreen80} {univgreen!80!white}
+\colorlet{univgreen90} {univgreen!90!white}
+
+% COLOR:: 银杏黄 - univyellow - CMYK(0,40,100,15).
+% \definecolor{univyellow}{cmyk}{0.00,0.40,1.00,0.15}
+\definecolor{univyellow}{cmyk}{1.00,0.54,0,0.45}
+\colorlet{univyellow10}{univyellow!10!white}
+\colorlet{univyellow20}{univyellow!20!white}
+\colorlet{univyellow30}{univyellow!30!white}
+\colorlet{univyellow40}{univyellow!40!white}
+\colorlet{univyellow50}{univyellow!50!white}
+\colorlet{univyellow60}{univyellow!60!white}
+\colorlet{univyellow70}{univyellow!70!white}
+\colorlet{univyellow80}{univyellow!80!white}
+\colorlet{univyellow90}{univyellow!90!white}
+% ----------------
+
+
+\mode<presentation>
+
+
+% ----------------
+% Beamer Theme Color Mode Layout
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.3a(2022/03/16).
+% Updated in v1.3c(2024/04/16).
+% ----------------
+% | PrimaryC | AuxiliaryC | SecondaryAuxiliaryC | IntersperseC ||
+% | 主题色    | 辅助色     | 第二辅助色           | 点缀色        |
+% --------------------------------------------------------------
+% | NomalTextC | AlertedTextC | BackgroundC | BlockExampleC  |
+% | 普通文本色  | 强调文本色    | 背景主体色   | Example 区块色 |
+% ------------------------------------------------------------
+% | BlockDefinitionC | BlockLemmaC | BlockConditionC |
+% | Definition 区块色 | Lemma 区块色| Condition 区块色 |
+% ----------------
+\if\EqualOptionsBeamer{ColorDisplay}{JXred}%
+	\colorlet{PrimaryC}           {univred}
+	\colorlet{AuxiliaryC}         {univgrey50}
+	\colorlet{SecondaryAuxiliaryC}{univgrey}
+	\colorlet{IntersperseC}       {univred60}
+	\colorlet{NomalTextC}         {black}
+	\colorlet{AlertedTextC}       {univred90}
+	\colorlet{BackgroundC}        {white}
+	% \colorlet{BackgroundC}        {univyellow}
+	\colorlet{BlockExampleC}      {univgrey!80!black}
+	\colorlet{BlockDefinitionC}   {univblue}
+	\colorlet{BlockLemmaC}        {univgreen}
+	\colorlet{BlockConditionC}    {univyellow}
+	\colorlet{HighlightCodeLineC} {univred10}
+
+\else\if\EqualOptionsBeamer{ColorDisplay}{BSblue}%
+	\colorlet{PrimaryC}           {univblue}
+	\colorlet{AuxiliaryC}         {univgrey50}
+	\colorlet{SecondaryAuxiliaryC}{univgrey}
+	\colorlet{IntersperseC}       {univblue60}
+	\colorlet{NomalTextC}         {black}
+	\colorlet{AlertedTextC}       {univblue90}
+	\colorlet{BackgroundC}        {white}
+	\colorlet{BlockExampleC}      {univgrey!80!black}
+	\colorlet{BlockDefinitionC}   {univred}
+	\colorlet{BlockLemmaC}        {univgreen}
+	\colorlet{BlockConditionC}    {univyellow}
+	\colorlet{HighlightCodeLineC} {univblue10}
+\else\if\EqualOptionsBeamer{ColorDisplay}{Custom}%
+	\def\beamer@univ@colorprovide#1#2{%
+		% #1:: colorname.
+		% #2:: set color.
+		\@ifundefined{\string\color@#1}{\colorlet{#1}{#2}}{}%
+	}
+	\beamer@univ@colorprovide{PrimaryC}           {univred}
+	\beamer@univ@colorprovide{AuxiliaryC}         {univgrey50}
+	\beamer@univ@colorprovide{SecondaryAuxiliaryC}{univgrey}
+	\beamer@univ@colorprovide{IntersperseC}       {univred60}
+	\beamer@univ@colorprovide{NomalTextC}         {black}
+	\beamer@univ@colorprovide{AlertedTextC}       {univred90}
+	\beamer@univ@colorprovide{BackgroundC}        {white}
+	\beamer@univ@colorprovide{BlockExampleC}      {univgrey!80!black}
+	\beamer@univ@colorprovide{BlockDefinitionC}   {univblue}
+	\beamer@univ@colorprovide{BlockLemmaC}        {univgreen}
+	\beamer@univ@colorprovide{BlockConditionC}    {univyellow}
+	\beamer@univ@colorprovide{HighlightCodeLineC} {univred10}
+\fi\fi\fi
+% ----------------
+
+
+% ----------------
+% Beamer Theme Color Layout
+% Confirmed in v1.3c(2024/04/16).
+% Established in v1.2a(2022/03/10).
+% Updated in v1.3a(2022/03/16), v1.3c(2024/04/16).
+% ----------------
+% 基本颜色设置.
+\setbeamercolor{structure}{fg=PrimaryC}
+\setbeamercolor{background canvas}{bg=BackgroundC}
+
+% 调色板颜色设置.
+\setbeamercolor{palette primary}   {fg=BackgroundC, bg=PrimaryC}
+\setbeamercolor{palette secondary} {fg=NomalTextC}
+\setbeamercolor{palette tertiary}  {fg=AlertedTextC}
+\setbeamercolor{palette quaternary}{fg=AuxiliaryC, bg=IntersperseC}
+
+% 页眉页脚颜色设置.
+\setbeamercolor{section in head/foot}    {parent=palette primary}
+\setbeamercolor{subsection in head/foot} {parent=structure}
+\setbeamercolor{frametitle}              {parent=structure}
+\setbeamercolor{framesubtitle}           {parent=palette tertiary}
+\setbeamercolor{author in head/foot}     {parent=structure}
+\setbeamercolor{title in head/foot}      {parent=structure}
+\setbeamercolor{framenumber in head/foot}{parent=structure}
+
+% 封页颜色设置.
+\setbeamercolor{title}          {bg=BackgroundC, fg=PrimaryC}
+\setbeamercolor{subtitle}       {bg=BackgroundC, fg=PrimaryC}
+%\setbeamercolor{author}         {fg=white,bg=}
+%\setbeamercolor{date}           {fg=white,bg=}
+\setbeamercolor{titlepageheader}{bg=white, fg=black}
+\setbeamercolor{titlepagefooter}{bg=white, fg=black}
+
+% 区块颜色设置.
+\setbeamercolor*{block title}        {parent=palette primary}
+\setbeamercolor*{block body}         {fg=, bg=univred40}
+\setbeamercolor*{block title example}{fg=white, bg=univblue}
+\setbeamercolor*{block body example} {fg=, bg=univblue40}
+\setbeamercolor*{block title alerted}{parent=palette primary}
+\setbeamercolor*{block body alerted} {fg=, bg=univred40}
+
+% 列表颜色设置.
+\setbeamercolor{item}                {parent=structure}
+\setbeamercolor{item projected}      {parent=structure}
+\setbeamercolor{enumerate item}      {parent=structure}
+\setbeamercolor{enumerate subitem}   {parent=structure}
+\setbeamercolor{enumerate subsubitem}{parent=structure}
+
+% 文本颜色设置.
+\setbeamercolor*{normal text} {parent=palette secondary}
+\setbeamercolor*{alerted text}{parent=palette tertiary}
+% ----------------
+
+
+%%%% ----------------------------------------------------------------
+\endinput
+%%%% ----------------------------------------------------------------
+% End of file `beamercolorthemeuniv.sty'.

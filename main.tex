@@ -1,0 +1,483 @@
+% !TeX document-id = {13e2f2d4-f224-4184-a23b-24063f20742d}
+% !TeX encoding = UTF-8
+% !BIB TS-program = biber
+% !TeX TS-program = xelatex
+% This is file `main.tex'.
+% Modify by Chentian Long.
+% Version: 2024/07/29 v1.3e (Original Version: 2024/04/16 v1.3c by Linrong Wu) .
+% 本文件为 UNIV_Beamer_Slide-demo 主文件源文件.
+% !使用前请阅读用户手册.
+
+% ================ %
+%      导言区      %
+% ================ %
+\documentclass[hyperref, UTF8, CJK,aspectratio=169]{beamer}
+% 默认4:3
+%\documentclass[hyperref, UTF8, CJK]{beamer}
+%\special{dvipdfmx:config z 0}
+
+% \colorlet{PrimaryC}{white}
+% \colorlet{BackgroundC}{black}
+% \colorlet{NomalTextC}{white}
+
+% --------UNIV Beamer 模板宏包--------
+% ----------------
+%\usetheme[ColorDisplay=Custom,
+%	ContentMuticols=true,
+%	Miniframes=follow,
+%	Background=false
+%]{univ}
+\usetheme[ColorDisplay=BSblue,
+	ContentMuticols=true,
+	Miniframes=follow,
+	Background=true,
+	Miniframes = follow,
+	BlockDisplay = colorful
+]{univ}
+	
+% --------不要调用的宏包--------
+% ----------------
+%\usepackage{pstricks} % pstricks: 绘图. (请勿调用, 本模板中调用的 adjustbox 宏包与之冲突)
+
+% --------宏包调用--------
+% ----------------
+\usepackage{transparent}
+\usetikzlibrary{shadings,arrows,decorations.pathmorphing,patterns}
+\usepackage{array}
+\usepackage{algorithm,algorithmic}
+\usepackage{amsmath,amsfonts,amssymb} % math equations, symbols
+\usepackage[english]{babel}
+\usepackage{color}      % color content
+\usepackage{url}        % hyperlinks
+\usepackage{multicol,multirow}
+\usepackage{ulem} % ulem: 添加线.
+\usepackage{booktabs}
+\usepackage{cprotect}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{varioref,cleveref}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{pspicture}
+
+% --------newcommand 区--------
+% 建议在此定义常用命令.
+% ----------------
+\newcommand{\fverb}[1]{\texttt{#1}}
+
+% --------封面信息输入--------
+% [<in footline>], {<in title page>} 方括号内容显示在页脚, 花括号内容为全称显示在封面.
+% ----------------
+\title[厦门大学虚拟偶像研究 | 化坤掌、苏珊六式、坤字诀、坤闪]{厦门大学虚拟偶像研究}
+\subtitle{Beamer模板使用答辩} % subtitle 未设置页脚显示项, 请在 title 中设置.
+\author[龙晨天, Linrong~Wu$^{\dagger}$]{龙晨天\inst{1,2} \and Linrong~Wu$^{3\dagger}$}
+\institute{%
+	\inst{1} 坤门
+	~(\textit{KM@kun.com})
+	\vspace*{-6pt} \and
+	\inst{2} ~School of Aerospace Engineering, Xiamen University, Xiamen, China\\
+	\inst{3} ~Business School, Sichuan University, Chengdu, China\\
+	\textit{lr.wu.interact@outlook.com}
+}
+\date{April 16th, 2024}
+
+% ---------------- %
+%      正文区      %
+% ---------------- %
+\begin{document}
+
+% --------总目录--------
+% 可注释.
+% ----------------
+%	\begin{frame}{目录}
+%		%\transfade%淡入淡出 
+%		\tableofcontents % 显示目录.
+%	\end{frame}
+
+% --------节: 声明--------
+% ----------------
+\section{引言}
+\subsection{研究现状}
+\begin{frame}{关于本模板}%=0.85
+	\begin{itemize}
+		\item 原作者创建初衷:
+		\begin{itemize}
+			\item 编者本人对\LaTeX{} 稍有涉足, 这也是编者的首个Beamer模板, 模板创建源于本学院李璐老师提出的PPT修改意见;
+			\item 项目也源于制作者本人的兴趣, 但本人对\LaTeX{} 的了解仍处在较浅层次, 故编写的模板可能会存在不兼容、编译后版式错位等现象;
+		\end{itemize}
+		\item \textbf{修改者初衷}: \textbf{这模板设计的还不错，符合我对\LaTeX{}做PPT的想象}：
+		\item 项目地址:
+		\begin{itemize}
+			\item 使用前请前往下列地址中查看原始模板版本!(有更新了看这个,跟着修改就行)
+			\item \faGithub\enspace{\color{univblue}\url{https://github.com/FvNCCR228/SCU_Beamer_Slide-demo}}
+			\item Gitee: \color{univblue}\url{https://gitee.com/NCCR/SCU_Beamer_Slide-demo}
+			
+		\end{itemize}
+		%			\framebreak
+		%		\pagebreak
+		\item 联系方式:
+		\begin{itemize}
+			\item 请联系原始制作者: lr.wu.interact@outlook.com
+			\item 修改作者: 无名之辈--龙晨天
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{使用注意}{雪豹闭嘴}
+	\begin{itemize}
+		\item<1-> \LaTeX 编辑器:
+		\begin{itemize}
+			\item<1-> 本地: TeX Live (推荐\href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}{\color{univblue}清华大学开源软件镜像站}安装最新版)配合TeXstudio或VS Code使用. TeX Live安装时间极长, 请各位做好心理准备. 此外Apple设备IDE平台建议知乎;
+			\item<1-> 在线: Overleaf平台, TeXPage平台.
+		\end{itemize}
+		\item<2-> \LaTeX 相关插件:
+		\begin{itemize}
+			\item<2-> 表格转换: Excel2\LaTeX~(\href{https://www.ctan.org/tex-archive/support/excel2latex/}{\color{univblue}CTAN Excel2\LaTeX});
+			\item<2-> 在线公式: \href{https://www.latexlive.com/}{\color{univblue}LaTeX公式编辑器}, \href{https://mathpix.com/}{\color{univblue}
+				Mathpix}~\&~\href{https://mathf.itewqq.cn/}{\color{univblue}图片在线转LaTeX}.
+		\end{itemize}
+		\item<3-> \color{univred}!! 编译相关:
+		\begin{itemize}
+			\item<3-> \alert{!! 请使用UTF-8格式, 设置XeLaTeX和Biber进行编译};
+			\item<3-> 在线编辑请上传整个工作文件夹, 否则会出现严重错误(Bug遍地飞);
+			\item<3-> \color{univred}!! 对\LaTeX 不熟悉的情况下, 请勿轻易改动".sty"文件(宏包文件)中代码, 也可按照文件中注释进行实验性修改(注意保留备份).
+		\end{itemize}
+		\item<4-> \color{univred} 建议使用Adobe Acrobat作为PDF浏览器(Ctrl+L全屏食用效果良好).
+	\end{itemize}
+\end{frame}
+
+% --------节: 研究分析--------
+% ----------------
+\section{研究分析}
+\subsection{字}
+\begin{frame}[fragile]{添加线}
+	\begin{multicols}{2}
+		\verb|\uline|\hfill 下划线\qquad\uline{混}\\
+		\verb|\uuline|\hfill 双下划线\qquad\uuline{元}\\
+		\verb|\uwave|\hfill 波浪线\qquad\uwave{形}\\
+		\verb|\sout|\hfill 删除线\qquad\sout{翼}\\
+		\verb|\xout|\hfill 斜删除线\qquad\xout{太}\\
+		\verb|\dashuline|\hfill 虚线\qquad\dashuline{极}\\
+		\verb|\dotuline|\hfill 加点\qquad\dotuline{门}
+	\end{multicols}
+\end{frame}
+
+\subsection{图, 表, 代码}
+\begin{frame}{图}
+	\begin{figure}[h]
+		\begin{subfigure}{.4\columnwidth}
+			\centering
+			\includegraphics%
+			[width=.3\columnwidth]{stop-rd.pdf}
+			\caption{白天的暂停}
+		\end{subfigure}
+		\quad
+		\begin{subfigure}{.4\columnwidth}
+			\centering
+			\includegraphics%
+			[width=.3\columnwidth]{stop-gn.pdf}
+			\caption{晚上的暂停}
+		\end{subfigure}
+		\caption{掌门常用的暂停}
+	\end{figure}
+	\begin{figure}[h]
+		\begin{minipage}[t]{.4\columnwidth}
+			\centering
+			\includegraphics%
+			[width=.3\columnwidth]{stop-rd.pdf}
+			\caption{掌门白天的暂停}
+			\label{fig:ZhangmenBtdzt}
+		\end{minipage}
+		\quad
+		\begin{minipage}[t]{.4\columnwidth}
+			\centering
+			\includegraphics%
+			[width=.3\columnwidth]{stop-gn.pdf}
+			\caption{掌门晚上的暂停}
+			\label{fig:ZhangmenWsdzt}
+		\end{minipage}
+	\end{figure}
+\end{frame}
+
+\cprotEnv\begin{frame}
+	\frametitle{表}
+	表格太麻烦了, 掌门说摸摸鱼, 编者觉得不错, 丢一个三线表示例. 当然也可以看看这个手册前面部分表格的源码.
+	\begin{table}[htbp]
+		\centering
+		\caption{一些国风音乐}
+		\label{tab:YixieGfyy}
+		\begin{tabular}{rlc}
+			\toprule
+			作曲家 & 歌名 & 门中喜欢的友人 \\
+			\midrule
+			李志辉 & 小桥流水人家 & 门主 \\
+			林海 & 无羁(器乐版) & 初号 \\
+			吕秀龄 & 逆伦 & 小初 \\
+			麦振鸿 & 从来只有一个人 & 编者(假的) \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\subsection{代码环境}
+\begin{frame}[fragile]{代码环境演示}
+	\onslide<2>
+	\begin{univcode}{A welcome program.}[cpphelloworld]{c}
+#include <iostream>
+int main()
+{
+	std::cout << "Hello World！" << std::endl;
+	std::cin.get();
+}
+	\end{univcode}
+	\onslide<1>
+	\begin{univcode}{A welcome program.}[chelloworld]{c}
+#include <stidio.h>
+int main()
+{
+	printf("Hello World！");
+	return 0;
+}
+	\end{univcode}
+\end{frame}
+
+\subsection{数学, 这小节很长很长}
+\begin{frame}[fragile,allowframebreaks]{数学环境}
+	\begin{univtheorem}{切比雪夫大数率}[QiebiXfdsl]
+		对独立随机变量序列$\{X_k\}$, 若$E(X_k)$, $D(X_k)$都存在, $k=1,2,\cdots$, 且有常数$C$, 使得$D(X_k)\leq C$, $k=1,2,\cdots$, 则有
+		\begin{equation}
+		\dfrac{1}{n} \sum_{k=1}^{n} X_k - \dfrac{1}{n} \sum_{k=1}^{n} E(X_k) \stackrel{\;P\;}{\longrightarrow} 0
+		\end{equation}
+	\end{univtheorem}
+	\begin{univproof}{}
+		请读者自证.
+	\end{univproof}
+	\begin{univexample}{形翼门的规模}[HunyuanXytjmdgm]
+		本门昨天去了80个人打水, 今天去了79个人打水, 本门的规模有多大?
+	\end{univexample}
+	\begin{univalgorithm}{怎么写Beamer模板}[ZengmoXBeamerzs]
+		\begin{algorithmic}[1]
+			\REQUIRE 一点点\LaTeX 知识, 不要太信任百度
+			\ENSURE 不知道怎么搞
+			\STATE 问门主, 肯定不知道
+			\STATE 问初号, 当然不知道
+			\STATE 问小初, 还是不知道
+			\RETURN 算了, 不问了, 都是不知道
+		\end{algorithmic}
+	\end{univalgorithm}
+	\begin{univdefinition}{马老卷}[MalaoJ]
+		是形翼门的打砸工, 直系上峰是马凡王, 入门改姓马, 自称老卷, 实则不卷.
+	\end{univdefinition}
+	\begin{univaxiom}{皮亚诺公理}[PiyaNgl]
+		略.
+	\end{univaxiom}
+	\begin{univproperty}{刚体的性质}[GangtiDxz]
+		刚体是个理想模型. 虽然理想但是还是那么难整, 进动和章动就不会了.
+	\end{univproperty}
+	\begin{univproposition}{不确定性原理}[BuqueDxyl]
+		粒子的位置与动量不可同时被确定, 位置的不确定性与动量的不确定性遵守不等式
+		\begin{equation}
+		\Delta x \Delta p \geq \dfrac{h}{4\pi}
+		\end{equation}
+		其中$h$为普朗克常数.
+	\end{univproposition}
+	\begin{univlemma}{卷王森林法则}[JuanwangSlfz]
+		源自未知高校学生, 此处略.
+	\end{univlemma}
+	\begin{univcorollary}{狼人杀的重要性}[LangrenSdzyx]
+		编者实习时听公司导师说面试有可能是趣味性游戏, 狼人杀感觉很符合, 所以玩狼人杀吧.
+	\end{univcorollary}
+	\begin{univremark}{}[Zhu]
+		\vref{coro:LangrenSdzyx}, 只是推论, 编者瞎说的.
+	\end{univremark}
+	\begin{univcondition}{面试狼人杀的条件}[MianshiLrsdtj]
+		\vref{coro:LangrenSdzyx}, 此推论有条件, 即真有公司面试用狼人杀.
+	\end{univcondition}
+	\begin{univconclusion}{爱废话的编者}[AifeiHdbz]
+		由上述可知: 编者爱废话.
+	\end{univconclusion}
+	\begin{univassumption}{编者不会废话}[BianzheBhfh]
+		我们可以假设编者不会废话, 假设成立, 编者当然不会废话.
+	\end{univassumption}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]{数学公式}
+	麦克斯韦分布函数$f(v) = \dfrac{\mathrm{d}N}{N\,\mathrm{d}v} = 4\pi \Big(\dfrac{\mu}{2\pi kT}\Big)^{3/2} v^2 \mathrm{exp}\Big(-\dfrac{\mu v^2}{2kT}\Big)$.\\[1ex]
+	最概然速率\[v_p = \sqrt{\dfrac{2kT}{\mu}} = \sqrt{\dfrac{2RT}{M}}\]其中$R$是气体常数, $M = N_A \mu$是物质的摩尔质量.\\[1ex]
+		\begin{equation*}
+			\bar{v} = \int_0^\infty vf(v)\,\mathrm{d}v = \sqrt{\dfrac{8kT}{\pi\mu}} = \sqrt{\dfrac{8RT}{\pi M}}
+		\end{equation*}
+	方均根速率
+		\begin{equation}
+		v_{rms} = \Big(\int_0^\infty v^2f(v)\,\mathrm{d}v\Big)^{1/2} = \sqrt{\dfrac{3kT}{\mu}} = \sqrt{\dfrac{3RT}{M}}
+		\end{equation}
+	$\symbb{R}\symbbit{R}\symcal{R}\symscr{R}\symfrak{R}\symsfup{R}\symsfit{R}\symbfsf{R}\symbfup{R}\symbfit{R}\symbfcal{R}\symbfscr{R}\symbffrak{R}\symbfsfup{R}\symbfsfit{R}$\\[1ex]
+	多行公式 
+		\begin{multline}
+			A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
+			+\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
+			+\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
+			+\ldots\\
+			\left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
+			=\frac{1}{3}\left(b^{3}-a^{3}\right)
+		\end{multline}\\[1ex]
+	质能方程
+		\begin{align}
+			E=m&c^2 & &E=mc^2\\
+			E=~&mc^2 & E&=mc^2 \notag \\
+			E&=mc^2 & E=~&mc^2\\
+			&E=mc^2 & E=m&c^2
+		\end{align}
+	?
+		\begin{equation}
+			\begin{aligned}
+			\dfrac{\mathrm{d}}{\mathrm{d}t} \symbfit{f} &= \dfrac{\mathrm{d}f_x}{\mathrm{d}t} \symbfit{\hat{i}} + \dfrac{\mathrm{d}\symbfit{\hat{i}}}{\mathrm{d}t} f_x + \dfrac{\mathrm{d}f_y}{\mathrm{d}t} \symbfit{\hat{j}} + \dfrac{\mathrm{d}\symbfit{\hat{j}}}{\mathrm{d}t} f_y + \dfrac{\mathrm{d}f_z}{\mathrm{d}t} \symbfit{\hat{k}} + \dfrac{\mathrm{d}\symbfit{\hat{k}}}{\mathrm{d}t} f_z \\
+			&= \dfrac{\mathrm{d}f_x}{\mathrm{d}t} \symbfit{\hat{i}} + \dfrac{\mathrm{d}f_y}{\mathrm{d}t} \symbfit{\hat{j}} + \dfrac{\mathrm{d}f_z}{\mathrm{d}t} \symbfit{\hat{k}} + \big[\symbf{\Omega} \times \big( f_x \symbfit{\hat{i}} + f_y \symbfit{\hat{j}} + f_z \symbfit{\hat{k}}\big) \big] \\
+			&= \Big(\dfrac{\mathrm{d}\symbfit{f}}{\mathrm{d}t}\Big)_r + \symbf{\Omega} \times \symbfit{f}(t)
+			\end{aligned}
+		\end{equation}
+	!
+		\begin{equation}
+			\begin{dcases}
+			\oint_l \symbfit{H} \cdot \mathrm{d}\symbfit{l} = \iint_S \symbfit{J} \cdot \mathrm{d}\symbfit{S} + \iint_S \dfrac{\partial\symbfit{D}}{\partial t} \cdot \mathrm{d}\symbfit{S} \\
+			\oint_l \symbfit{E} \cdot \mathrm{d}\symbfit{l} = - \iint_S \dfrac{\partial\symbfit{B}}{\partial t} \cdot \mathrm{d}\symbfit{S} \\
+			\oint_S \symbfit{B} \cdot \mathrm{d}\symbfit{S} = 0 \\
+			\oint_S \symbfit{D} \cdot \mathrm{d}\symbfit{S} = \iiint_V \rho \mathrm{d}V
+			\end{dcases}
+		\end{equation}
+\end{frame}
+
+% --------节: 总结与思考--------
+% ----------------
+\section{总结与思考}
+\subsection{页面相关}
+\begin{frame}[fragile,label={fra:Fenlan}]{分栏}
+	\vspace{1ex}
+	\begin{columns}
+		\begin{column}[t]{0.35\linewidth}
+			这里是栏一
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=.8\columnwidth]{logo_name}
+					\\厦门大学校徽及校名\\
+					\vspace{1ex}
+					\includegraphics[width=.4\columnwidth]{XMU-SoAE.png}
+					\\厦门大学航空航天学院
+				\end{center}
+			\end{figure}
+		\end{column}
+		\pause
+		\begin{column}[t]{0.4\linewidth}
+			这里是栏二
+			\vspace{1ex}
+			\begin{itemize}
+				\item 无序列表环境示例
+				\begin{enumerate}
+					\item 有序列表环境示例
+					\item 有序列表环境示例
+					\item 有序列表环境示例
+				\end{enumerate}
+				\item 无序列表环境示例
+				\item 无序列表环境示例
+			\end{itemize}
+		\end{column}
+		\pause
+		\begin{column}[t]{0.25\linewidth}
+			这里是栏三
+			\par\vskip1ex
+			厦门大学校训\\
+			\vskip2ex
+			自强不息\\[.5ex]
+			止于至善
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{引用}
+\begin{frame}[fragile]{交叉引用}
+	在Beamer中应避免过多的交叉引用, 此处编者给出了常用的引用命令及其示例.
+	\begin{table}[h]
+		\centering
+		\caption{交叉引用命令表}
+		\label{tab:JiaochaYymlb}
+		\begin{tabular}{lcl}
+			\toprule
+			命令 & 显示项 & 示例 \\
+			\midrule
+			\verb|\ref|\verb|{<label>}| & 序号 & \ref{assu:BianzheBhfh} \\
+			\verb|\ref*|\verb|{<label>}| & 序号 & \ref*{assu:BianzheBhfh} \\
+			\verb|\nameref|\verb|{<label>}| & 标题 & \nameref{assu:BianzheBhfh} \\
+			\verb|\vref|\verb|{<label>}| & 标题页码 & \vref{fra:Fenlan} \\
+			\verb|\pageref|\verb|{<label>}| & 页码 & \pageref{assu:BianzheBhfh} \\
+			\verb|\vpageref|\verb|{<label>}| & 页码 & \vpageref{assu:BianzheBhfh} \\
+			\verb|\cref|\verb|{<label>}| & 标题 & \cref{assu:BianzheBhfh} \\
+			\verb|\crefrange|\verb|{<label>}| & 范围 & \crefrange{fig:ZhangmenBtdzt}{fig:ZhangmenWsdzt} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}[fragile]{参考文献相关}
+	\begin{itemize}[<+-| alert@+>]
+		\item 脚注\footnote{这是方法一.};
+		\item 脚注\footnotemark.
+	\end{itemize}
+	\footnotetext{这是方法二.}
+	虚拟偶像单篇\cite{__2020-1}, 多篇\cite{__2016,m_possibilities_2018};
+	\begin{itemize}
+		\item 虚拟偶像\footnotemark.\footfullcitetext[3]{_ugc_2018}
+		\item 虚拟偶像\footfullcite[8]{__2018}.
+	\end{itemize}
+	参考文献空白请按F8启动bibtex进行编译。(texstudio)
+	参考文献空白请按F8启动bibtex进行编译。(texstudio)
+	参考文献空白请按F8启动bibtex进行编译。(texstudio)
+\end{frame}
+
+% --------节: 参考文献--------
+% ----------------
+\section{参考文献}
+\subsection{参考文献}
+\begin{frame}[allowframebreaks]{文献目录}
+	\nocite{*}
+	\printbibliography[heading=none]
+\end{frame}
+
+% --------节: 致谢--------
+% ----------------
+\section{致谢}
+\subsection{致谢}
+\begin{frame}{原作者致谢}
+	\begin{center}
+		本模板参考了Beamer, Tcolorbox等手册, 感谢宏包原作者及维护者\\[1ex]
+		本模板参考了知乎, Stack Overflow等平台回答, 感谢相关问题解答者\\[1ex]
+		本模板使用了开源字体——楷体: 霞鹜文楷(Github \href{https://github.com/lxgw/LxgwWenKai/}{\color{univblue}LxgwWenKai} 项目), 黑体: Source Han Sans (Github \href{https://github.com/adobe-fonts/source-han-sans/}{\color{univblue}source-han-sans} 项目), 感谢字体设计师设计的优秀字体\\[1ex]
+		本模板参考了中国科学技术大学Beamer模板(Github \href{https://github.com/ysx2000/USTCBeamerSX/}{\color{univblue}USTCBeamerSX} 项目), 感谢原作者提供部分设计思路\\[1ex]
+		本模板参考了清华大学Beamer模板(Github \href{https://github.com/tuna/THU-Beamer-Theme/}{\color{univblue}THU-Beamer-Theme} 项目), 中国科学技术大学Beamer模板(Github \href{https://github.com/ustctug/ustcbeamer/}{\color{univblue}ustcbeamer} 项目), 感谢原作者设计的优秀模板\\[1ex]
+		
+		若在使用过程中发现些许Bug, 感谢诸位理解, 在此也希望诸位能先行尝试多次编译\\[1ex]
+		万分感谢诸位批评指正, 感谢诸位对模板及对制作者的支持!
+	\end{center}
+\end{frame}
+\begin{frame}{致谢}
+		感谢原作者！
+本模板参考了四川大学Beamer模板(Github \href{https://github.com/FvNCCR228/SCU_Beamer_Slide-demo}{\color{univblue}SCUBeamerSlide-demo} 项目), 感谢原作者提供\textbf{全部设计思路}\\
+
+原作者给出GitHub写道:
+\textbf{欢迎友校的朋友们对此模板进行修改, 不过这个模板可能有点点难改, 希望能看懂我的注释, 但愿吧.}
+
+所以我只是单纯稍微修改了下。
+
+\begin{itemize}
+	\item 为了避免膈应，我把scu类都改成通用的university的缩写univ类，方便大家修改。
+	\item  大家多多支持原作者，多点几颗星。
+	\item  所以如有侵权，请联系我删除。
+\end{itemize}
+\end{frame}
+\begin{frame}{}
+	\centering
+	\Huge 谢谢
+\end{frame}
+
+\end{document}
+
+%% End of file `main.tex'.
